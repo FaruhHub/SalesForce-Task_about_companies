@@ -1,0 +1,36 @@
+<apex:page controller="LessonThreeController">
+    <apex:form >
+        
+        <apex:pageBlock title="Companies info">
+            <table width="100%" border="1" cellpadding="5" cellspacing="0">
+                <tr >
+                    <th>Company</th>
+                    <th>Order</th>
+                    <th>Rate</th>
+                    <th>Revenue</th>
+                    <th>Margin</th>
+                    <th>Work Period</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                </tr>
+                
+            </table>
+            <apex:repeat value="{!infoList}" var="rowNum">
+                <apex:pageBlockTable value="{!rowNum}" var="info" width="80%" border="0" cellpadding="5" cellspacing="0" >                    
+                    
+                    <tr>
+                        <td><apex:column value="{!info.Company.Name}"/></td>
+                        <td><apex:column value="{!info.Order.Name}"/></td>
+                        <td><apex:column value="{!info.Rate.Name}"/></td>
+                        <td><apex:column value="{!info.Rate.Revenue}"/></td>
+                        <td><apex:column value="{!info.Rate.Margin}"/></td>
+                        <td><apex:column value="{!info.WorkPeriod.Name}"/></td>
+                        <td><apex:column value="{!info.WorkPeriod.StartDate}"/></td>
+                        <td><apex:column value="{!info.WorkPeriod.EndDate}"/></td>
+                    </tr>
+                    
+            </apex:pageBlockTable>
+            </apex:repeat>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
